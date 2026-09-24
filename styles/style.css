@@ -41,6 +41,18 @@
 /* Inter Font (great for readability and minimal design) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* Elsie */
+
+@import url("https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Didact+Gothic&family=Elsie:wght@400;900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Didact Githic */
+
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* nunito */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 /*
 
 /* 
@@ -105,13 +117,13 @@
 
 :root {
   /* Typography */
-  --font-family-body: "Inter", sans-serif;
-  --font-family-heading: "Eczar", serif;
-  --font-family-project-title: "Eczar", serif;
+  --font-family-body: "Nunito", sans-serif;
+  --font-family-heading: "Didact Gothic", sans-serif;
+  --font-family-project-title: "Didact Gothic", sans-serif;
   /* Core Colours */
   --color-text-primary: #222;
   --color-text-secondary: #333;
-  --color-accent-primary: #5200ff;
+  --color-accent-primary: #060606;
   --color-accent-secondary: #ff057c;
   --color-overlay-primary: rgba(82, 0, 255, 0.5);
   --color-highlight: lemonchiffon;
@@ -124,21 +136,21 @@
   /* Headings */
   --h1-color: #5200ff;
   --h2-color: #5200ff;
-  --h3-color: #5200ff;
-  --h4-color: #5200ff;
-  --h5-color: #5200ff;
-  --h6-color: #5200ff;
+  --h3-color: #000000;
+  --h4-color: #000000;
+  --h5-color: #171717;
+  --h6-color: #080808;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
-  --color-text-project-category: #ffffff;
+  --color-text-project-category: #080808;
   --color-text-project-description: #222;
   --color-text-project-sidebar: #222;
   --color-text-project-title: #5200ff;
-  --color-text-work-grid-title: #ffffff;
+  --color-text-work-grid-title: #060606;
   /* Link States */
   --color-link: #5200ff;
   --color-link-hover: #111;
-  --color-link-visited: #5200ff;
+  --color-link-visited: #1a191b;
   /* Navigation */
   --color-nav-link: #5200ff;
   --color-nav-link-hover: #321575;
@@ -152,7 +164,12 @@
   --color-bg-sidebar-project: orangered;
   --color-bg-sidebar-work: lemonchiffon;
   --color-gradient-hero: linear-gradient(90deg, #ff00ff, #00ffff);
-  --color-gradient-project-details: linear-gradient(-225deg, #ff057c 0%, #8d0b93 50%, #321575 100%);
+  --color-gradient-project-details: linear-gradient(
+    -225deg,
+    #ff057c 0%,
+    #8d0b93 50%,
+    #321575 100%
+  );
   /* Special Elements */
   --color-icon-heart: darkred;
   --color-text-holding-footer: #f8f8ff;
@@ -206,7 +223,8 @@
 html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
-  cursor: url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
+  cursor:
+    url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
 
   /* TODO: Replace the URL above to add a custom cursor. 
      If you want to use the default browser cursor, just delete this line. */
@@ -234,7 +252,9 @@ body {
 /* ------------------------------- */
 
 ::selection {
-  background: var(--color-bg-selection); /* Uses your custom color for highlighted text */
+  background: var(
+    --color-bg-selection
+  ); /* Uses your custom color for highlighted text */
 }
 
 /* ---------------------------------------- */
@@ -446,7 +466,7 @@ svg {
 
 h1 {
   font-size: 2.2rem;
-  font-family: var(--font-family-heading);
+  font-family: "Didact Gothic", sans-serif;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h1-color);
@@ -468,21 +488,23 @@ h3 {
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h4-color);
 }
 
 h5 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
   color: var(--h5-color);
 }
 
 h6 {
-  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h6-color);
@@ -494,7 +516,7 @@ h6 {
 /* ------------------------------------------------------------------ */
 
 p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.3;
   margin-bottom: 1rem;
 }
@@ -524,6 +546,12 @@ sup {
   max-width: 40ch; /* Optimal line length for readability (~40 characters) */
   text-wrap: balance; /* Prevents awkward line breaks (like elegant typography) */
   margin-inline: auto; /* Horizontally centers the text in its container */
+}
+
+.hero-name {
+  font-family: "Elsie", serif;
+  color: var(--color-accent-primary);
+  font-size: 11rem;
 }
 
 /* Large project title — appears on individual project pages */
@@ -563,9 +591,9 @@ sup {
 
 /* 📂 Project grid title — used in grid view (like a portfolio gallery) */
 .work-grid-project-title {
-  font-size: 2.875rem;
   color: var(--color-text-work-grid-title);
   text-wrap: balance;
+  margin: 0;
 }
 
 /* 🏷️ Project category label — displays the type or role of the project */
@@ -591,6 +619,7 @@ sup {
 
 /* Unvisited link */
 a:link {
+  font-size: 1.2rem;
   color: var(--color-link);
   text-decoration: none; /* Removes underline */
 }
@@ -679,7 +708,7 @@ a.nav-link-primary:hover {
 
 .hero {
   width: 100%;
-  min-height: 80vh; /* Takes up most of the screen height */
+  min-height: 85vh; /* Takes up most of the screen height */
   display: flex;
   flex-direction: column;
 }
@@ -690,7 +719,8 @@ a.nav-link-primary:hover {
 .nav-branding {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3rem;
   padding: var(--padding-small);
   align-items: center;
 }
@@ -713,7 +743,7 @@ a.nav-link-primary:hover {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 3rem;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   padding: var(--padding-small);
@@ -723,7 +753,7 @@ a.nav-link-primary:hover {
 .hero-icon {
   font-size: 4rem;
 }
-
+/*i dont think i need hero footer*/
 .hero-footer {
   display: flex;
   justify-content: center;
@@ -736,6 +766,23 @@ a.nav-link-primary:hover {
   flex-direction: row;
   justify-content: space-between;
   padding: var(--padding-small);
+}
+.logo {
+  fill: red;
+}
+
+.logo:hover {
+  fill: purple;
+  transition: fill 0.3s ease-in-out;
+}
+
+.offer-ticker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /*
@@ -761,7 +808,9 @@ a.nav-link-primary:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-full-width); /* Background color for full-width sections */
+  background: var(
+    --color-bg-full-width
+  ); /* Background color for full-width sections */
   margin-bottom: 1rem;
 }
 
@@ -815,13 +864,17 @@ a.nav-link-primary:hover {
 .portfolio,
 .project-wrapper,
 .work-sidebar-wrapper {
-  padding: var(--padding-tiny); /* Padding to keep content from touching edges */
+  padding: var(
+    --padding-tiny
+  ); /* Padding to keep content from touching edges */
 }
 
 /* Work Sidebar on Mobile */
 .work-sidebar {
   width: 100%;
-  background: var(--color-bg-sidebar-work); /* Background color for the sidebar */
+  background: var(
+    --color-bg-sidebar-work
+  ); /* Background color for the sidebar */
 }
 
 /* Main Work Area with Sidebar on Mobile */
@@ -832,9 +885,13 @@ a.nav-link-primary:hover {
 /* Defining the work page grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive grid */
-  grid-gap: 1rem; /* Space between grid items */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Creates a responsive grid */
+  grid-gap: 7rem; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
+  padding: 1rem;
 }
 
 /* Individual Work Grid Item */
@@ -871,7 +928,9 @@ a.nav-link-primary:hover {
   align-items: center;
   flex-direction: column;
   padding: var(--padding-small);
-  background-color: var(--color-overlay-primary); /* Background color of the overlay */
+  background-color: var(
+    --color-overlay-primary
+  ); /* Background color of the overlay */
   transition:
     opacity var(--duration-normal),
     visibility var(--duration-normal);
@@ -885,6 +944,10 @@ a.nav-link-primary:hover {
 
 /* Optional container for future overlay customization */
 .project-details-overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
   /* Placeholder: no custom styles yet */
 }
 
@@ -1167,7 +1230,9 @@ a.nav-link-primary:hover {
 .project-details {
   width: 100%;
   padding: var(--padding-small);
-  background: var(--color-gradient-project-details); /* TODO: Remove gradient background if you prefer a simpler design */
+  background: var(
+    --color-gradient-project-details
+  ); /* TODO: Remove gradient background if you prefer a simpler design */
 }
 
 /* Previous/Next Arrow Styles */
@@ -1272,7 +1337,9 @@ a.nav-link-primary:hover {
 
 .holding-page-copyright {
   font-size: 0.8rem; /* Smaller font size for copyright text */
-  color: var(--color-text-holding-footer); /* Custom color for the footer text */
+  color: var(
+    --color-text-holding-footer
+  ); /* Custom color for the footer text */
   margin-bottom: 0; /* Removes default margin from the bottom of the copyright text */
 }
 
@@ -1444,7 +1511,7 @@ to keep your styles reusable and consistent.
   }
 
   .hero {
-    min-height: 100vh;
+    min-height: 80vh;
   }
 
   .hero-headline-wrapper {
@@ -1635,7 +1702,7 @@ to keep your styles reusable and consistent.
   /* TODO: Add styles here for XX-large devices. */
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   }
 }
 
