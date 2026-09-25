@@ -535,6 +535,10 @@ sup {
   font-weight: normal; /* optional: adjust weight */
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 /* ------------------------------------------------------------------ */
 /* 🎨 Custom Class Styles for Headlines, Projects, and Highlights     */
 /* Use these utility classes to style key text elements across pages  */
@@ -1051,7 +1055,7 @@ a.nav-link-primary:hover {
 
 .footer-tagline {
   grid-column: 1 / 2; /* Full width (single column) */
-  grid-row: 1 / 2;
+  grid-row: 1 / 3;
 }
 .footer-highlights {
   grid-column: 1 / 2;
@@ -1085,7 +1089,16 @@ a.nav-link-primary:hover {
   margin-bottom: 2rem;
 }
 .footer-socials-list {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 2rem;
+  gap: 2.5rem;
+}
+
+.social-icon-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1113,6 +1126,10 @@ a.nav-link-primary:hover {
   margin-bottom: 0.25rem;
   padding-left: 0.5rem;
   text-indent: -0.5rem; /* Pulls text back toward bullet */
+}
+
+.footer-thanks {
+  font-size: 3.5rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1144,6 +1161,9 @@ a.nav-link-primary:hover {
 
 .footer-global-wrapper {
   padding: var(--padding-small);
+}
+
+.fa-brands {
 }
 
 /* 
@@ -1654,7 +1674,7 @@ to keep your styles reusable and consistent.
 
   /* Column 1: Tagline/Message */
   .footer-tagline {
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
     grid-row: 1 / 2;
   }
 
