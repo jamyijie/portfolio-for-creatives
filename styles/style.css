@@ -566,7 +566,7 @@ sup {
 
 .hero-name {
   color: var(--color-accent-primary);
-  font-size: 11rem;
+  font-size: 7rem;
   font-weight: 500;
 }
 
@@ -745,7 +745,7 @@ a.nav-link-primary:hover {
 
 .nav-branding {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 3rem;
   padding: var(--padding-small);
@@ -1587,6 +1587,12 @@ to keep your styles reusable and consistent.
   .home-hero {
     min-height: 60vh;
     margin-bottom: 2rem;
+  }
+
+  .hero-name {
+    color: var(--color-accent-primary);
+    font-size: 11rem;
+    font-weight: 500;
   }
 
   .hero-headline-wrapper {
