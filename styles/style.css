@@ -53,6 +53,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+/* sumana */
+
+@import url("https://fonts.googleapis.com/css2?family=Sumana:wght@400;700&display=swap");
+
+/* DM Sans */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
 /*
 
 /* 
@@ -118,20 +126,20 @@
 :root {
   /* Typography */
   --font-family-body: "Nunito", sans-serif;
-  --font-family-heading: "Didact Gothic", sans-serif;
-  --font-family-project-title: "Didact Gothic", sans-serif;
+  --font-family-heading: "DM Sans", sans-serif;
+  --font-family-project-title: "DM Sans", sans-serif;
   /* Core Colours */
   --color-text-primary: #222;
   --color-text-secondary: #333;
-  --color-accent-primary: #060606;
+  --color-accent-primary: #1f2428;
   --color-accent-secondary: #ff057c;
   --color-overlay-primary: rgba(82, 0, 255, 0.5);
   --color-highlight: lemonchiffon;
   --color-fallback: #ff057c; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
   --color-bg: #fdfdfd;
-  --color-bg-about: #f5f5f5;
-  --color-bg-footer: #f5f5f5;
+  --color-bg-about: #fdfdfd;
+  --color-bg-footer: #fceec8;
   --color-bg-holding-page: rgba(82, 0, 255, 0.6);
   /* Headings */
   --h1-color: #1d1d1d;
@@ -142,7 +150,7 @@
   --h6-color: #080808;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
-  --color-text-project-category: #080808;
+  --color-text-project-category: #045499;
   --color-text-project-description: #222;
   --color-text-project-sidebar: #222;
   --color-text-project-title: #201f22;
@@ -466,7 +474,7 @@ svg {
 
 h1 {
   font-size: 2.2rem;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h1-color);
@@ -478,6 +486,7 @@ h2 {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h2-color);
+  letter-spacing: 0.1rem;
 }
 
 h3 {
@@ -488,8 +497,8 @@ h3 {
 }
 
 h4 {
-  font-family: "Didact Gothic", sans-serif;
   font-size: 2rem;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h4-color);
@@ -497,12 +506,11 @@ h4 {
 
 h5 {
   font-size: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.4;
   color: var(--h5-color);
 }
 
 h6 {
-  font-family: "Nunito", sans-serif;
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1.2;
@@ -516,8 +524,9 @@ h6 {
 /* ------------------------------------------------------------------ */
 
 p {
+  font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.6;
   margin-bottom: 1rem;
 }
 
@@ -553,9 +562,9 @@ sup {
 }
 
 .hero-name {
-  font-family: "Elsie", serif;
   color: var(--color-accent-primary);
   font-size: 11rem;
+  font-weight: 500;
 }
 
 /* Large project title — appears on individual project pages */
@@ -714,12 +723,14 @@ a.nav-link-primary:hover {
 
 .hero {
   width: 100%;
-  min-height: 85vh; /* Takes up most of the screen height */
+  min-height: 50vh; /* Takes up most of the screen height */
   display: flex;
   flex-direction: column;
+  background-image: url("../assets/branding-images/jamie-wang-hero.jpg");
+  margin-bottom: 2rem;
 }
 .hero-header {
-  min-height: 6rem; /* Space reserved for logo + nav */
+  min-height: 1rem; /* Space reserved for logo + nav */
 }
 
 .nav-branding {
@@ -754,6 +765,7 @@ a.nav-link-primary:hover {
   justify-content: center;
   padding: var(--padding-small);
   text-align: center; /* Keeps text centered */
+  max-height: 50vh;
 }
 
 .hero-icon {
@@ -791,6 +803,10 @@ a.nav-link-primary:hover {
   margin-bottom: 0.5rem;
 }
 
+.custom-navigation {
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+}
 /*
 
  ██████  ██████  ███    ███ ██████   ██████  ███    ██ ███████ ███    ██ ████████ ███████ 
@@ -867,7 +883,6 @@ a.nav-link-primary:hover {
 }
 
 /* Padding around work grid and project page */
-.portfolio,
 .project-wrapper,
 .work-sidebar-wrapper {
   padding: var(
@@ -897,7 +912,7 @@ a.nav-link-primary:hover {
   ); /* Creates a responsive grid */
   grid-gap: 7rem; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
-  padding: 1rem;
+  padding: 3rem;
 }
 
 /* Individual Work Grid Item */
@@ -952,7 +967,7 @@ a.nav-link-primary:hover {
 .project-details-overlay {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.3rem;
   margin-bottom: 1rem;
   /* Placeholder: no custom styles yet */
 }
@@ -1004,7 +1019,7 @@ a.nav-link-primary:hover {
 .about-grid {
   display: grid; /* Set to grid layout */
   grid-template-columns: 1fr; /* Single column layout for mobile and smaller screens */
-  grid-gap: 3rem; /* Space between grid items */
+  grid-gap: 2rem; /* Space between grid items */
   background: var(--color-bg-about); /* Background color for the section */
   padding: var(--padding-small); /* Padding around the grid */
   flex: 1; /* Flex-grow to take up available space */
@@ -1020,6 +1035,19 @@ a.nav-link-primary:hover {
 .about-grid-text {
   grid-column: 1 / 2; /* Text spans the first column */
   grid-row: 2 / 3; /* Text spans the second row */
+}
+
+.highlight-bg {
+  color: var(--color-accent-primary);
+  padding: var(--padding-large);
+  background-color: #fceec8;
+  margin-bottom: 2rem;
+}
+
+.about-pics {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 /* 
@@ -1542,12 +1570,12 @@ to keep your styles reusable and consistent.
   }
 
   .hero {
-    min-height: 80vh;
+    min-height: 60vh;
   }
 
   .hero-headline-wrapper {
-    padding-top: var(--padding-jumbo);
-    padding-bottom: var(--padding-jumbo);
+    padding-top: var(--padding-small);
+    padding-bottom: var(--padding-small);
     padding-left: var(--padding-ultra);
     padding-right: var(--padding-ultra);
   }
@@ -1647,8 +1675,9 @@ to keep your styles reusable and consistent.
   /* About Page Grid for Large Devices */
 
   .about-grid {
-    padding: var(--padding-jumbo);
+    padding: 8rem;
     grid-template-columns: 2fr 3fr;
+    align-items: center;
   }
 
   .about-grid-image {

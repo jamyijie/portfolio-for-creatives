@@ -2,8 +2,8 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  width: 8rem;
-  height: 2rem;
+  width: 10rem;
+  height: 5rem;
   background: var(--floral-white);
   display: flex;
   align-items: center;
@@ -11,7 +11,8 @@
   z-index: 1;
   transition: all 1s;
   margin: 1rem;
-  background-color: aqua;
+  border-radius: 50%;
+  background-color: #fd948e;
 }
 .hide {
   opacity: 0;
