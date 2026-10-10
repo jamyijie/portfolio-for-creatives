@@ -157,7 +157,7 @@
   --color-text-work-grid-title: #060606;
   /* Link States */
   --color-link: #5200ff;
-  --color-link-hover: #111;
+  --color-link-hover: #045499;
   --color-link-visited: #1a191b;
   /* Navigation */
   --color-nav-link: #5200ff;
@@ -805,7 +805,7 @@ a.nav-link-primary:hover {
 }
 
 .offer-ticker {
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -815,6 +815,14 @@ a.nav-link-primary:hover {
 .custom-navigation {
   font-family: var(--font-family-heading);
   font-weight: 500;
+}
+
+.playground-intro {
+  padding: var(--padding-large);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 /*
 
@@ -919,9 +927,9 @@ a.nav-link-primary:hover {
     auto-fit,
     minmax(300px, 1fr)
   ); /* Creates a responsive grid */
-  grid-gap: 3rem; /* Space between grid items */
+  grid-gap: 1rem; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
-  padding: 3rem;
+  padding: 2rem;
 }
 
 /* Individual Work Grid Item */
@@ -1265,7 +1273,7 @@ a.nav-link-primary:hover {
   flex-direction: column;
   padding: var(--padding-small);
   width: 100%;
-  margin-bottom: 1rem; /* Space below the description */
+  margin-bottom: 2.5rem; /* Space below the description */
 }
 
 /* Column styles for one-column, two-column and four-column layouts (mobile-first) */
@@ -1276,7 +1284,7 @@ a.nav-link-primary:hover {
 }
 .col-2 {
   width: 100%;
-  padding: 1rem 5rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .col-1-center {
@@ -1681,7 +1689,9 @@ to keep your styles reusable and consistent.
   /* Column styles for two-column and four-column layouts (desktop) */
   .col-2 {
     width: 50%;
+    padding: 1rem 5rem 1rem 1rem;
   }
+
   .col-4 {
     width: 25%;
   }
@@ -1697,7 +1707,7 @@ to keep your styles reusable and consistent.
   /* About Page Grid for Large Devices */
 
   .about-grid {
-    padding: 8rem;
+    padding: 5rem 15rem 5rem 15rem;
     grid-template-columns: 2fr 3fr;
     align-items: center;
   }
@@ -1709,6 +1719,18 @@ to keep your styles reusable and consistent.
   .about-grid-text {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
+    padding: var(--padding-jumbo);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Creates a responsive grid */
+    grid-gap: 3rem; /* Space between grid items */
+    /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
+    padding: 3rem;
   }
 
   /* ------------------------------- */
@@ -1765,6 +1787,13 @@ to keep your styles reusable and consistent.
 
   .work-details {
     width: 75%;
+  }
+  .offer-ticker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
   }
 }
 
